@@ -5,6 +5,8 @@ from tda.orders.equities import equity_sell_trailing_stop_limit
 
 
 class Test(TestCase):
+
+
     def test_equity_sell_trailing_stop_limit(self):
         symbol="@ABC"
         quantity=100
