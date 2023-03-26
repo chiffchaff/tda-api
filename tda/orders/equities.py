@@ -186,7 +186,7 @@ def equity_sell_trailing_stop_limit(symbol, quantity, trail_offset, limit_price,
     if trail_offset_type == 'PERCENT' and (float(trail_offset) < 1 or float(trail_offset) > 99):
         raise ValueError('When using percent, trailing offset must be >=1 and <=99')
 
-    return (OrderBuilder()
+    return (OrderBuilder(enforce_enums=False)
             .set_order_type(OrderType.TRAILING_STOP)
             .set_quantity(int(quantity))
             .set_price(round(float(limit_price), 2))
